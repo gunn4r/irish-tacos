@@ -29,7 +29,7 @@ var express = require('express'),
 
 //Express Setup
 var app = express();
-var port = 3000;
+var port = 80;
 
 app.use(bodyParser.json());
 app.use(cors());
