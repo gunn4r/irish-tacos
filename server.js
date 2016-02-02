@@ -9,7 +9,7 @@ var express = require('express'),
 
 
 // DB Models
-var User = require('./api/models/userModel.js');
+//var User = require('./api/models/userModel.js');
 
 // Controllers
 
@@ -33,7 +33,6 @@ var port = 3000;
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
 app.use(session({
@@ -41,14 +40,6 @@ app.use(session({
 	saveUninitialized: false,
 	resave: true
 }));
-
-
-
-
-  //Endpoints
-
-
-
 
 
 

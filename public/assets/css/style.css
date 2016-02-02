@@ -1,0 +1,36 @@
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+html, body, body.login ui-view {
+  height: 100%;
+  width: 100%;
+}
+
+body.login {
+  background: #333 url('../img/bg/login1.jpg') no-repeat 50% 50%;
+  background-size: cover;
+}
+
+body.login ui-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form{
+  width: 100%;
+  height: auto;
+  background: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/use_your_illusion.png') repeat;
+  background-color: rgba(255,255,255,.85);
+  display: flex;
+  flex-flow:row wrap;
+  justify-content: center;
+  z-index: 100;
+  padding: 30px;
+  box-shadow: 0 0 10px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  margin: 0 auto;
+  vertical-align: middle;
+  position: relative;
+}
