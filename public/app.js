@@ -8,19 +8,16 @@ app.config(function($urlRouterProvider, $stateProvider){
       url: '/login',
       templateUrl: 'app/components/login/loginView.html',
       controller: 'loginCtrl',
-      controllerAs: 'login'
     })
     .state('admin', {
       url: '/admin',
       templateUrl: 'app/components/admin/adminView.html',
       controller: 'adminCtrl',
-      controllerAs: 'admin'
     })
     .state('admin.users', {
       url: '/users',
       template: '',
       controller: 'adminUsersCtrl',
-      controllerAs: 'users'
     });
 
   $urlRouterProvider.otherwise('/login');

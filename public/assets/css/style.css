@@ -8,7 +8,7 @@ html, body, body.login ui-view {
 }
 
 body.login {
-  background: #333 url('../img/bg/login2.jpg') no-repeat 50% 50%;
+  background: #333 url('../img/bg/login6.jpg') no-repeat 50% 50%;
   background-size: cover;
 }
 
@@ -21,14 +21,16 @@ body.login ui-view {
 .login-form{
   width: 100%;
   height: auto;
-  background: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/use_your_illusion.png') repeat;
+  background: url('../img/bg/loginpattern.png') repeat;
   background-color: rgba(255,255,255,.85);
   display: flex;
   flex-flow:row wrap;
   justify-content: center;
   z-index: 100;
   padding: 30px;
-  box-shadow: 0 0 10px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px 15px rgba(0, 0, 0, 0.5);
+  border-top: 5px solid #191919;
+  border-bottom: 5px solid #191919;
   border-radius: 2px;
   margin: 0 auto;
   vertical-align: middle;

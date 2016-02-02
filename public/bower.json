@@ -1,0 +1,26 @@
+{
+  "name": "irish-tacos",
+  "homepage": "https://github.com/gunn4r/irish-tacos",
+  "authors": [
+    "Gunnar Gabrielson <gunnargabrielson@gmail.com>"
+  ],
+  "description": "Resturant Management App",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "resturant"
+  ],
+  "license": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "classie": "^1.0.1",
+    "font-awesome": "fontawesome#^4.5.0"
+  }
+}
