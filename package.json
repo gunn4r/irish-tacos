@@ -4,6 +4,7 @@
   "description": "Small Restaurant Management System",
   "main": "server.js",
   "dependencies": {
+    "bcrypt": "^0.8.5",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.14.2",
     "cors": "^2.7.1",

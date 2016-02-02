@@ -1,10 +1,79 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-Herp Derpadsasds
-</body>
+<!DOCTYPE html>
+<html ng-app="manage.irishtacos">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Irish Tacos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--3rd Party CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+    <!--Text Input Styles-->
+    <link rel="stylesheet" href="assets/libs/TextInputEffects/css/set2.css">
+
+    <!--Button Styles-->
+    <link rel="stylesheet" href="assets/libs/CreativeButtons/css/component.css">
+
+    <!--Main CSS Styles-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--3rd Party Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.17/angular-ui-router.js"></script>
+    <script src="assets/libs/TextInputEffects/js/classie.js"></script>
+
+    <!--App Scripts-->
+    <script src="app.js"></script>
+    <script src="/app/shared/mainCtrl.js"></script>
+    <script src="/app/components/login/loginCtrl.js"></script>
+    <script src="/app/components/admin/adminCtrl.js"></script>
+  </head>
+
+  <body ng-controller="mainCtrl" class="{{$state.current.name}}">
+    <!-- <header>IRISH TACOS</header>
+    <aside>
+      <a ui-sref="login">Login</a>
+      <a ui-sref="admin">Admin</a>
+      <a ui-sref="admin.users">Users</a>
+    </aside> -->
+    <ui-view></ui-view>
+  </body>
+  <script>
+    (function() {
+      // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+      if (!String.prototype.trim) {
+        (function() {
+          // Make sure we trim BOM and NBSP
+          var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+          String.prototype.trim = function() {
+            return this.replace(rtrim, '');
+          };
+        })();
+      }
+
+      [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+        // in case the input is already filled..
+        if( inputEl.value.trim() !== '' ) {
+          classie.add( inputEl.parentNode, 'input--filled' );
+        }
+
+        // events:
+        inputEl.addEventListener( 'focus', onInputFocus );
+        inputEl.addEventListener( 'blur', onInputBlur );
+      } );
+
+      function onInputFocus( ev ) {
+        classie.add( ev.target.parentNode, 'input--filled' );
+      }
+
+      function onInputBlur( ev ) {
+        if( ev.target.value.trim() === '' ) {
+          classie.remove( ev.target.parentNode, 'input--filled' );
+        }
+      }
+    })();
+  </script>
+
 </html>
