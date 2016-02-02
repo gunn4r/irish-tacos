@@ -1,11 +1,10 @@
 var express = require('express'),
     bodyParser = require('body-parser'),
-    cors = require('cors'),
-    passport = require('passport'),
-    morgan = require('morgan'),
-    mongoose = require('mongoose'),
-    session = require('express-session'),
-    LocalStrategy = require('passport-local');
+    cors = require('cors');
+    // passport = require('passport'),
+    // mongoose = require('mongoose'),
+    // session = require('express-session'),
+    // LocalStrategy = require('passport-local');
 
 
 // DB Models
@@ -29,22 +28,20 @@ var express = require('express'),
 
 //Express Setup
 var app = express();
-var port = 80;
+app.set('port', (process.env.PORT || 3000));
 
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(__dirname + '/public'));
 
-app.use(session({
-	secret: 'MONKEYBUTTS',
-	saveUninitialized: false,
-	resave: true
-}));
-
-
+// app.use(session({
+// 	secret: 'MONKEYBUTTS',
+// 	saveUninitialized: false,
+// 	resave: true
+// }));
 
 
   //Server Init - Listen
-app.listen(port, function(){
-    console.log('Listening on port ' + port + '.');
+app.listen(app.get('port'), function(){
+    console.log('Listening on port ' + app.get('port') + '.');
 });
