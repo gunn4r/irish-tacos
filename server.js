@@ -15,14 +15,14 @@ var express = require('express'),
 
 
 //Database Setup
-var mongoUri = 'mongodb://localhost:27017/irish-tacos';
-mongoose.connect(mongoUri);
-
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error: '));
-db.once('open', function () {
-	console.log('Connected to mongo at', mongoUri);
-});
+// var mongoUri = 'mongodb://localhost:27017/irish-tacos';
+// mongoose.connect(mongoUri);
+//
+// var db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error: '));
+// db.once('open', function () {
+// 	console.log('Connected to mongo at', mongoUri);
+// });
 
 //Passport Setup
 
