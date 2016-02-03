@@ -2,3 +2,4 @@ node_modules/
 .idea
 ignored/
 public/assets/libs/bower/
+bin/.env
