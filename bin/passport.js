@@ -10,15 +10,16 @@ passport.use(new LocalStrategy({
   User.findOne({ email: email })
   .exec(function(err, user) {
     if(err) done(err);
-    if(!user) return done(null, false);
+    if(!user) return done('WTF?! That isnt even a user! IDIOT!', false);
     if(user.verifyPassword(password)) return done(null, user);
-    return done(null, false);
+    return done('Password was wrong sucka.', false);
   });
 }));
 
 passport.serializeUser(function(user, done) {
   done(null, user._id);
 });
+
 passport.deserializeUser(function(_id, done) {
   User.findById(_id, function(err, user) {
     done(err, user);

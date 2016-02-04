@@ -1,15 +1,18 @@
+<div class="input-message" ng-if="loginError">
+  {{loginError}}
+</div>
 <div class="login-form">
-    <span class="input input--ruri" ng-class="{'input--filled': user.email}">
+    <span class="input input--ruri" ng-class="{'input--filled': user.email, 'input--error': loginError}">
       <input class="input__field input__field--ruri" type="text" id="input-26" ng-model="user.email" />
       <label class="input__label input__label--ruri" for="input-26">
         <span class="input__label-content input__label-content--ruri">Username</span>
       </label>
     </span>
-    <span class="input input--ruri" ng-class="{'input--filled': user.password}">
+    <span class="input input--ruri" ng-class="{'input--filled': user.password, 'input--error': loginError}">
       <input class="input__field input__field--ruri" type="text" id="input-27" ng-model="user.password"/>
       <label class="input__label input__label--ruri" for="input-27">
         <span class="input__label-content input__label-content--ruri">Password</span>
       </label>
     </span>
-    <button class="btn btn-3 btn-3e icon-arrow-right">Login</button>
+    <button class="btn btn-3 btn-3e icon-arrow-right" ng-click="userLogin(user)">Login</button>
 </div>

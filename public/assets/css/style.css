@@ -129,6 +129,10 @@ body.login ui-view {
 	transition: transform 0.3s, background-color 0.3s;
 }
 
+.input--error .input__label--ruri::after {
+	background: red;
+}
+
 .input__label-content--ruri {
 	padding: 0;
 	-webkit-transform-origin: 0 0;
@@ -149,6 +153,17 @@ body.login ui-view {
 	color: #76bf55;
 	-webkit-transform: translate3d(0, 2em, 0) scale3d(0.755, 0.755, 1);
 	transform: translate3d(0, 2em, 0) scale3d(0.755, 0.755, 1);
+}
+
+.input__field--ruri.input--error:focus + .input__label--ruri::after,
+.input--filled.input--error .input__label--ruri::after {
+	background: red;
+}
+
+.input__field--ruri:focus + .input__label--ruri.input--error .input__label-content--ruri,
+.input--filled.input--error .input__label--ruri .input__label-content--ruri {
+	color: red;
+  font-weight:bold;
 }
 
 

@@ -12,7 +12,21 @@ app.config(function($urlRouterProvider, $stateProvider){
     .state('admin', {
       url: '/admin',
       templateUrl: 'app/components/admin/adminView.html',
-      controller: 'adminCtrl',
+      controller: 'adminCtrl'
+      // resolve: {
+      //   user: function(userService, $state){
+      //     return userService.getCurrentUser()
+      //     .then(function(response){
+      //       console.log(response);
+      //       // if(response.status !== 200) {
+      //       //   console.error(response.data, response.status, response.statusText);
+      //       // } else {
+      //       //   return response.data;
+      //       // }
+      //     }
+      //   );
+      //   }
+      // }
     })
     .state('admin.users', {
       url: '/users',

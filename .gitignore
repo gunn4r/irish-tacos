@@ -3,3 +3,4 @@ node_modules/
 ignored/
 public/assets/libs/bower/
 bin/.env
+.vscode/
