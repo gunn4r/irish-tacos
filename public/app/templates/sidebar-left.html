@@ -1,0 +1,18 @@
+<header id="header">
+  <img class="pure-img" src="/assets/img/logo.jpg">
+</header>
+
+<div class="current-user-info">
+  <img src="/assets/img/avatar/avatar.jpg" class="avatar">
+  <div class="current-user-toggle">
+    {{currentUser.nameFirst}} {{currentUser.nameLast}}
+  </div>
+</div>
+
+<nav>
+  <a ui-sref="dashboard">Dashboard</a>
+  <a ui-sref="users">Users</a>
+  <a ui-sref="login">Login</a>
+  <a ng-click="logout()">Logout</a>
+  <a ng-click="sidebarToggle.right = !sidebarToggle.right">Toggle Right</a>
+</nav>

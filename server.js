@@ -7,8 +7,7 @@ var express = require('express'),
     cors = require('cors'),
     passport = require('passport'),
     mongoose = require('mongoose'),
-    session = require('express-session'),
-    LocalStrategy = require('passport-local');
+    session = require('express-session');
 
 // Controllers
 var userCtrl = require('./controllers/userCtrl');
@@ -43,11 +42,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Endpoints
-app.post('/api/users', userCtrl.register);
-app.get('/api/me', isAuthed, userCtrl.me);
-app.put('/api/users/:_id', isAuthed, userCtrl.update);
-
+//Users CRUD
+app.post('/api/user', userCtrl.create);
+app.get('/api/users', userCtrl.read);
+app.put('/api/users/:id', userCtrl.update);
+app.delete('/api/user/:id', userCtrl.delete);
 
 //Login and Logout
 app.post('/api/login', passport.authenticate('local', {

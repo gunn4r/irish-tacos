@@ -16,13 +16,16 @@
     <!--3rd Party Scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.17/angular-ui-router.js"></script>
-    <script src="assets/libs/bower/classie/classie.js"></script>
 
     <!--App Scripts-->
-    <script src="app.js"></script>
-    <script src="/app/shared/mainCtrl.js"></script>
-    <script src="/app/components/login/loginCtrl.js"></script>
-    <script src="/app/components/admin/adminCtrl.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/config.js"></script>
+    <script src="/app/controllers/mainCtrl.js"></script>
+    <script src="/app/controllers/loginCtrl.js"></script>
+    <script src="/app/controllers/adminCtrl.js"></script>
+    <script src="/app/controllers/userCtrl.js"></script>
+    <script src="/app/services/loginService.js"></script>
+    <script src="/app/services/userService.js"></script>
 
     <!--Misc-->
     <!--[if IE]>u
@@ -31,12 +34,6 @@
   </head>
 
   <body ng-controller="mainCtrl" class="{{$state.current.name}}">
-    <!-- <header>IRISH TACOS</header>
-    <aside>
-      <a ui-sref="login">Login</a>
-      <a ui-sref="admin">Admin</a>
-      <a ui-sref="admin.users">Users</a>
-    </aside> -->
     <ui-view></ui-view>
   </body>
 </html>
