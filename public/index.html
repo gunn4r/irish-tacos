@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="manage.irishtacos">
+<html ng-app="manage.irishtacos" ng-controller="mainCtrl">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -9,13 +9,27 @@
     <!--3rd Party CSS-->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="assets/libs/bower/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0-beta.9/ng-table.css">
 
     <!--Main CSS Styles-->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!--Misc-->
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body class="{{$state.current.name}}">
+
+    <ui-view></ui-view>
+
     <!--3rd Party Scripts-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular-resource.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.17/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0-beta.9/ng-table.js"></script>
 
     <!--App Scripts-->
     <script src="/app/app.js"></script>
@@ -27,13 +41,5 @@
     <script src="/app/services/loginService.js"></script>
     <script src="/app/services/userService.js"></script>
 
-    <!--Misc-->
-    <!--[if IE]>u
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-
-  <body ng-controller="mainCtrl" class="{{$state.current.name}}">
-    <ui-view></ui-view>
   </body>
 </html>

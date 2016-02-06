@@ -15,6 +15,19 @@ app.service('userService', function($http){
   			url: '/api/users?_id=56b3913f02e149ec2f5c8850'
   		});
   	};
+
+    this.getUsers = function(userId){
+      if(userId){
+        return $http({
+          method: 'GET',
+          url: '/api/users/?_id=' + userId
+        });
+      }
+      return $http({
+        method: 'GET',
+        url: '/api/users'
+      });
+    };
 });
 
 

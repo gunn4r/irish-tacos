@@ -1,3 +1,9 @@
 <article class="content">
   <h1>HERP DERP USERS VIEW LOADED</h1>
+  <table ng-table="tableParams" class="table table-bordered table-striped table-condensed">
+        <tr ng-repeat="row in $data">
+          <td data-title="'First Name'" sortable="'nameFirst'">{{row.nameFirst}}</td>
+          <td data-title="'Last Name'" sortable="'nameLast'">{{row.nameLast}}</td>
+        </tr>
+      </table>
 </article>

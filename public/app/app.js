@@ -1,4 +1,8 @@
-var app = angular.module('manage.irishtacos', ['ui.router']);
+var app = angular.module('manage.irishtacos', [
+  'ui.router',
+  'ngTable',
+  'ngResource'
+]);
 
 
 //Debugging State Changes
