@@ -1,9 +1,29 @@
 <article class="content">
   <h1>HERP DERP USERS VIEW LOADED</h1>
-  <table ng-table="tableParams" class="table table-bordered table-striped table-condensed">
-        <tr ng-repeat="row in $data">
-          <td data-title="'First Name'" sortable="'nameFirst'">{{row.nameFirst}}</td>
-          <td data-title="'Last Name'" sortable="'nameLast'">{{row.nameLast}}</td>
+  <div class="inner-content">
+    <table class="pure-table pure-table-horizontal">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>Name</td>
+          <td>Email</td>
+          <td>Phone</td>
+          <td>Creation Date</td>
+          <td>Active?</td>
+          <td>Type</td>
         </tr>
-      </table>
+      </thead>
+      <tbody>
+        <tr ng-repeat="user in users">
+          <td>{{user._id}}</td>
+          <td>{{user.nameFirst}} {{user.nameLast}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phone}}</td>
+          <td>{{user.createdAt}}</td>
+          <td>{{user.active}}</td>
+          <td>{{user.type}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </article>

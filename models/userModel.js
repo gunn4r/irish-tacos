@@ -1,7 +1,8 @@
-var mongoose = require('mongoose');
-var bcrypt = require('bcryptjs');
+var mongoose = require('mongoose'),
+    bcrypt = require('bcryptjs'),
+    metaInfo = require('./schemas/metaSchema');
 
-var User = new mongoose.Schema({
+var userSchema = new mongoose.Schema({
   nameFirst: {
     type: String,
     required: true,
@@ -37,26 +38,13 @@ var User = new mongoose.Schema({
     default: 'user',
     enum: ['admin', 'manager', 'employee']
   },
-  active: {
-    type: Boolean,
-    default: true,
-    required: true
-  },
-  createdAt : {
-    type: Date,
-    default: Date.now,
-    required: true
-  },
-  updatedAt : {
-    type: Date
-  }
+  meta: metaInfo
 });
 
 //Mongoose middleware that triggers on every save of User model. Encrypts password on creation, and skips encryption if the password isn't modified.
-User.pre('save', function(next) {
+userSchema.pre('save', function(next) {
 	var user = this;
 	if (!user.isModified('password'))	{
-    console.log('User didnt modify password', user.isModified('password'));
     return next();
   }
   var salt = bcrypt.genSaltSync(10);
@@ -67,8 +55,8 @@ User.pre('save', function(next) {
 });
 
 
-User.methods.verifyPassword = function(reqBodyPassword) {
+userSchema.methods.verifyPassword = function(reqBodyPassword) {
   return bcrypt.compareSync(reqBodyPassword, this.password); //this = the user
 };
 
-module.exports = mongoose.model('User', User);
+module.exports = mongoose.model('User', userSchema);

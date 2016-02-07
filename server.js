@@ -10,7 +10,8 @@ var express = require('express'),
     session = require('express-session');
 
 // Controllers
-var userCtrl = require('./controllers/userCtrl');
+var userCtrl = require('./controllers/userCtrl'),
+    vendorCtrl = require('./controllers/vendorCtrl');
 
 // Passport
 var passport = require('./bin/passport');
@@ -48,6 +49,10 @@ app.get('/api/users', userCtrl.read);
 app.put('/api/users/:id', userCtrl.update);
 app.delete('/api/user/:id', userCtrl.delete);
 
+app.post('/api/vendor', vendorCtrl.create);
+app.get('/api/vendor', vendorCtrl.read);
+app.put('/api/vendor', vendorCtrl.update);
+
 //Login and Logout
 app.post('/api/login', passport.authenticate('local', {
   successRedirect: '/api/me'
@@ -63,6 +68,7 @@ app.get('/api/logout', function(req, res, next) {
 var port = (process.env.port || process.env.MIT_PORT);
 var mongoUri = process.env.MIT_MONGO_URI;
 
+mongoose.set('debug', true);
 mongoose.connect(mongoUri);
 mongoose.connection
   .on('error', console.error.bind(console, 'Connection Error: '))
