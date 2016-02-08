@@ -11,7 +11,10 @@ var express = require('express'),
 
 // Controllers
 var userCtrl = require('./controllers/userCtrl'),
-    vendorCtrl = require('./controllers/vendorCtrl');
+    vendorCtrl = require('./controllers/vendorCtrl'),
+    brandCtrl = require('./controllers/brandCtrl'),
+    inventoryCtrl = require('./controllers/inventoryCtrl'),
+    receiptCtrl = require('./controllers/receiptCtrl');
 
 // Passport
 var passport = require('./bin/passport');
@@ -45,13 +48,33 @@ app.use(passport.session());
 
 //Users CRUD
 app.post('/api/user', userCtrl.create);
-app.get('/api/users', userCtrl.read);
-app.put('/api/users/:id', userCtrl.update);
+app.get('/api/user', userCtrl.read);
+app.put('/api/user/:id', userCtrl.update);
 app.delete('/api/user/:id', userCtrl.delete);
 
+//Vendors Crud
 app.post('/api/vendor', vendorCtrl.create);
 app.get('/api/vendor', vendorCtrl.read);
 app.put('/api/vendor', vendorCtrl.update);
+app.delete('/api/vendor', vendorCtrl.delete);
+
+//Brands Crud
+app.post('/api/brand', brandCtrl.create);
+app.get('/api/brand', brandCtrl.read);
+app.put('/api/brand', brandCtrl.update);
+app.delete('/api/brand', brandCtrl.delete);
+
+//Inventory Crud
+app.post('/api/inventory', inventoryCtrl.create);
+app.get('/api/inventory', inventoryCtrl.read);
+app.put('/api/inventory', inventoryCtrl.update);
+app.delete('/api/inventory', inventoryCtrl.delete);
+
+//Receipt Crud
+app.post('/api/receipt', receiptCtrl.create);
+app.get('/api/receipt', receiptCtrl.read);
+app.put('/api/receipt', receiptCtrl.update);
+app.delete('/api/receipt', receiptCtrl.delete);
 
 //Login and Logout
 app.post('/api/login', passport.authenticate('local', {
@@ -73,7 +96,7 @@ mongoose.connect(mongoUri);
 mongoose.connection
   .on('error', console.error.bind(console, 'Connection Error: '))
   .once('open', function() {
-    console.log('Connected to MongoDB at', mongoUri);
+    console.log('Connected to MongoDB at', mongoUri.slice(mongoUri.indexOf('@')+1, mongoUri.length));
     app.listen(port, function() {
       console.log('Listening on port ' + port);
     });

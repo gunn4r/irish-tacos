@@ -1,6 +1,6 @@
 //Dummy User JSON
 
-//56b3913f02e149ec2f5c8850
+//56b6deb55480fee4107a22f9
 {
   "nameFirst"   : "Dummy",
   "nameLast"    : "Dude",
@@ -11,7 +11,7 @@
   "active"      : true
 }
 
-//56b39bbc7e7064982ae15339
+//56b6debc5480fee4107a22fa
 {
   "nameFirst"   : "Dummy2",
   "nameLast"    : "Dude2",
@@ -31,8 +31,8 @@
   "addressState"    : "UT",
   "addressZip"      : "84604",
   "meta"            : {
-                      "createdBy"       : "56b3913f02e149ec2f5c8850",
-                      "updatedBy"       : "56b3913f02e149ec2f5c8850"
+                      "createdBy"       : "56b6deb55480fee4107a22f9",
+                      "updatedBy"       : "56b6debc5480fee4107a22fa"
                       }
 }
 
@@ -44,11 +44,42 @@
   "addressState"    : "UT",
   "addressZip"      : "84060",
   "meta"            : {
-                      "createdBy"       : "56b39bbc7e7064982ae15339",
-                      "updatedBy"       : "56b39bbc7e7064982ae15339"
+                      "createdBy"       : "56b6debc5480fee4107a22fa",
+                      "updatedBy"       : "56b6deb55480fee4107a22f9"
                       }
 }
 
+//Dummy Brands
+{
+  "name"  : "Kraft",
+  "meta"  : {
+            "createdBy" : "56b6debc5480fee4107a22fa",
+            "updatedBy" : "56b6deb55480fee4107a22f9"
+            }
+}
+{
+  "name"  : "Best Value",
+  "meta"  : {
+            "createdBy" : "56b6debc5480fee4107a22fa",
+            "updatedBy" : "56b6deb55480fee4107a22f9"
+            }
+}
+
+{
+  "name"  : "Nestle",
+  "meta"  : {
+            "createdBy" : "56b6debc5480fee4107a22fa",
+            "updatedBy" : "56b6deb55480fee4107a22f9"
+            }
+}
+
+{
+  "name"  : "Old Paso",
+  "meta"  : {
+            "createdBy" : "56b6debc5480fee4107a22fa",
+            "updatedBy" : "56b6deb55480fee4107a22f9"
+            }
+}
 
 
 //Dummy Ingredient JSON

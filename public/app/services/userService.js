@@ -12,7 +12,7 @@ app.service('userService', function($http){
     this.getDummyUser = function(){
   		return $http({
   			method: 'GET',
-  			url: '/api/users?_id=56b6debc5480fee4107a22fa'
+  			url: '/api/user?_id=56b6deb55480fee4107a22f9'
   		});
   	};
 
@@ -20,12 +20,12 @@ app.service('userService', function($http){
       if(userId){
         return $http({
           method: 'GET',
-          url: '/api/users/?_id=' + userId
+          url: '/api/user/?_id=' + userId
         });
       }
       return $http({
         method: 'GET',
-        url: '/api/users'
+        url: '/api/user'
       });
     };
 });
