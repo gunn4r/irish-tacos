@@ -1,12 +1,13 @@
 var mongoose = require('mongoose'),
-    metaInfo = require('./schemas/metaSchema');
+    metaSchema = require('./schemas/metaSchema');
 
 
 var brandSchema = new mongoose.Schema({
 
-    name: {type: String, require: true, trim: true, index: true},
-    meta: metaInfo
+    name: { type: String, require: true, trim: true },
+    meta: metaSchema
 
 });
+
 
 module.exports = mongoose.model('Brand', brandSchema);

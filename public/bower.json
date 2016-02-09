@@ -20,8 +20,7 @@
     "tests"
   ],
   "dependencies": {
-    "classie": "^1.0.1",
     "font-awesome": "fontawesome#^4.5.0",
-    "ng-table": "^0.8.3"
+    "ag-grid": "^3.3.0"
   }
 }

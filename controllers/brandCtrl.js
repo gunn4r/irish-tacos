@@ -1,9 +1,9 @@
-var Brand = require('../models/vendorModel'),
+var Brand = require('../models/brandModel'),
     includes = require('./includes');
 
 module.exports = {
     create : function(req,res){ Brand.create(req.body, includes.apiResultFunc(req,res)); },
-    update : function(req,res){ Brand.findByIdAndUpdate(req.query.id, req.body, includes.apiResultFunc(req,res)); },
+    update : function(req,res){Brand.findByIdAndUpdate(req.query.id, {$set: req.body}, includes.apiResultFunc(req,res));},
     delete : function(req,res){ Brand.findByIdAndRemove(req.query.id, includes.apiResultFunc(req,res)); },
     read : function(req,res){
         var query;

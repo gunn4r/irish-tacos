@@ -1,7 +1,8 @@
+agGrid.initialiseAgGridWithAngular1(angular);
+
 var app = angular.module('manage.irishtacos', [
   'ui.router',
-  'ngTable',
-  'ngResource'
+  'agGrid'
 ]);
 
 

@@ -1,29 +1,6 @@
-<article class="content">
+<article class="content" style="height:80vh">
   <h1>HERP DERP USERS VIEW LOADED</h1>
-  <div class="inner-content">
-    <table class="pure-table pure-table-horizontal">
-      <thead>
-        <tr>
-          <td>ID</td>
-          <td>Name</td>
-          <td>Email</td>
-          <td>Phone</td>
-          <td>Creation Date</td>
-          <td>Active?</td>
-          <td>Type</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="user in users">
-          <td>{{user._id}}</td>
-          <td>{{user.nameFirst}} {{user.nameLast}}</td>
-          <td>{{user.email}}</td>
-          <td>{{user.phone}}</td>
-          <td>{{user.createdAt}}</td>
-          <td>{{user.active}}</td>
-          <td>{{user.type}}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="inner-content" style="height:100%;">
+    <div ag-grid="gridOptions" class="ag-fresh" style="height: 100%;"></div>
   </div>
 </article>

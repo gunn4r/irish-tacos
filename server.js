@@ -14,7 +14,8 @@ var userCtrl = require('./controllers/userCtrl'),
     vendorCtrl = require('./controllers/vendorCtrl'),
     brandCtrl = require('./controllers/brandCtrl'),
     inventoryCtrl = require('./controllers/inventoryCtrl'),
-    receiptCtrl = require('./controllers/receiptCtrl');
+    receiptCtrl = require('./controllers/receiptCtrl'),
+    recipeCtrl = require('./controllers/recipeCtrl');
 
 // Passport
 var passport = require('./bin/passport');
@@ -75,6 +76,12 @@ app.post('/api/receipt', receiptCtrl.create);
 app.get('/api/receipt', receiptCtrl.read);
 app.put('/api/receipt', receiptCtrl.update);
 app.delete('/api/receipt', receiptCtrl.delete);
+
+//Recipe Crud
+app.post('/api/recipe', recipeCtrl.create);
+app.get('/api/recipe', recipeCtrl.read);
+app.put('/api/recipe', recipeCtrl.update);
+app.delete('/api/recipe', recipeCtrl.delete);
 
 //Login and Logout
 app.post('/api/login', passport.authenticate('local', {

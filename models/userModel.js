@@ -1,44 +1,19 @@
 var mongoose = require('mongoose'),
     bcrypt = require('bcryptjs'),
-    metaInfo = require('./schemas/metaSchema');
+    metaSchema = require('./schemas/metaSchema');
 
 var userSchema = new mongoose.Schema({
-  nameFirst: {
-    type: String,
-    required: true,
-    trim:true,
-    lowercase: true
+  name: {
+    first: { type: String, required: true, trim:true, lowercase: true },
+    middle: { type: String, trim:true, lowercase: true },
+    last: { type: String, required: true, trim:true, lowercase: true }
   },
-  nameLast: {
-    type: String,
-    required: true,
-    trim:true,
-    lowercase: true
+  email: { type: String, index: true, trim: true, required: true, unique: true, lowercase: true },
+  password: { type: String, required: true, trim: true },
+  phone: { type: Number, trim: true },
+  type : { type: String, required: true, default: 'employee', enum: ['admin', 'manager', 'employee']
   },
-  email: {
-    type: String,
-    index: true,
-    trim: true,
-    required: true,
-    unique: true,
-    lowercase: true
-  },
-  password: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  phone: {
-     type: Number,
-     trim: true
-   },
-  type : {
-    type: String,
-    required: true,
-    default: 'user',
-    enum: ['admin', 'manager', 'employee']
-  },
-  meta: metaInfo
+  meta: metaSchema
 });
 
 //Mongoose middleware that triggers on every save of User model. Encrypts password on creation, and skips encryption if the password isn't modified.

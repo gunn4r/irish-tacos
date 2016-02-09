@@ -1,4 +1,4 @@
-var Receipt = require('../models/vendorModel'),
+var Receipt = require('../models/receiptModel'),
     includes = require('./includes');
 
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
         query
         .populate({ path: 'meta.createdBy meta.updatedBy', select: 'nameFirst nameLast' })
         .populate({ path: 'vendor', select: 'name' })
-        .populate({ path: 'items.item', select: '-meta' })
+        .populate({ path: 'items.item', select: '-meta -__v' })
         .select('-__v')
         .exec(includes.apiResultFunc(req,res));
     }

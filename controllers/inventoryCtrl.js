@@ -1,4 +1,4 @@
-var Inventory = require('../models/vendorModel'),
+var Inventory = require('../models/inventoryModel'),
     includes = require('./includes');
 
 module.exports = {

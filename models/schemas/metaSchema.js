@@ -1,12 +1,8 @@
 var mongoose = require('mongoose');
 
 var metaSchema = new mongoose.Schema({
-  active: {
-    type: Boolean,
-    default: true,
-    required: true
-  },
-  createdAt : { type: Date, default: Date.now },
+  active: { type: Boolean, default: true },
+  createdAt : { type: Date },
   createdBy : { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   updatedAt : { type: Date },
   updatedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
@@ -14,7 +10,9 @@ var metaSchema = new mongoose.Schema({
 
 
 metaSchema.pre('save', function(next) {
-  this.updatedAt = Date.now();
+  var now = new Date();
+  this.updatedAt = now;
+  if(!this.createdAt) this.createdAt = now;
   next();
 });
 

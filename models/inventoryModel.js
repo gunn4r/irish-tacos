@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-    metaInfo = require('./schemas/metaSchema');
+    metaSchema = require('./schemas/metaSchema');
 
 
 var inventorySchema = new mongoose.Schema({
@@ -15,7 +15,7 @@ var inventorySchema = new mongoose.Schema({
     category: { type: String },
     parLevel: { type: Number },
     stock: { type: Number },
-    meta: metaInfo
+    meta: metaSchema
 
 });
 
