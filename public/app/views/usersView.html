@@ -1,6 +1,10 @@
-<article class="content" style="height:80vh">
-  <h1>HERP DERP USERS VIEW LOADED</h1>
-  <div class="inner-content" style="height:100%;">
-    <div ag-grid="gridOptions" class="ag-fresh" style="height: 100%;"></div>
+  <div class="page-header">
+    <h1>{{$state.current.name}}</h1>
+    <div class="actions">
+      <button class="btn btn-3 btn-3e btn-sm icon-plus add" ng-click="sidebarToggle.right = !sidebarToggle.right">Add {{$state.current.name}}</button>
+    </div>
   </div>
-</article>
+
+  <div class="inner-content" style="height:90vh;">
+    <div ag-grid="gridOptions" class="ag-tacos" style="height: 100%"></div>
+  </div>

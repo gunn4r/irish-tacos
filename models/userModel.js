@@ -5,7 +5,6 @@ var mongoose = require('mongoose'),
 var userSchema = new mongoose.Schema({
   name: {
     first: { type: String, required: true, trim:true, lowercase: true },
-    middle: { type: String, trim:true, lowercase: true },
     last: { type: String, required: true, trim:true, lowercase: true }
   },
   email: { type: String, index: true, trim: true, required: true, unique: true, lowercase: true },
@@ -16,7 +15,6 @@ var userSchema = new mongoose.Schema({
   meta: metaSchema
 });
 
-//Mongoose middleware that triggers on every save of User model. Encrypts password on creation, and skips encryption if the password isn't modified.
 userSchema.pre('save', function(next) {
 	var user = this;
 	if (!user.isModified('password'))	{
@@ -28,7 +26,6 @@ userSchema.pre('save', function(next) {
 
   return next(null, user);
 });
-
 
 userSchema.methods.verifyPassword = function(reqBodyPassword) {
   return bcrypt.compareSync(reqBodyPassword, this.password); //this = the user

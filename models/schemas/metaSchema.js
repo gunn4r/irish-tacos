@@ -3,9 +3,9 @@ var mongoose = require('mongoose');
 var metaSchema = new mongoose.Schema({
   active: { type: Boolean, default: true },
   createdAt : { type: Date },
-  createdBy : { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  createdBy : { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   updatedAt : { type: Date },
-  updatedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+  updatedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
 });
 
 

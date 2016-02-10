@@ -1,0 +1,249 @@
+.ag-tacos .ag-cell {
+  padding: 2px;
+  line-height: 35px;
+}
+
+.ag-tacos .ag-cell-focus {
+  border: 2px solid rgb(255,123,0);
+  outline-color: rgb(255,123,0);
+}
+
+.ag-tacos .ag-cell-first-right-pinned {
+  border-left: 1px dotted rgb(255,123,0);
+}
+
+.ag-tacos .ag-header {
+  background: #fff;
+  border-bottom: 0;
+}
+.ag-tacos .ag-no-scrolls .ag-header-container,
+.ag-tacos .ag-header-container,
+.ag-tacos .ag-header-row,
+.ag-tacos .ag-header {
+  height:40px!important;
+}
+
+.ag-tacos .ag-header-cell {
+      line-height: 33px;
+}
+
+.ag-tacos .ag-header-cell:hover,
+.ag-tacos .ag-row:hover  {
+background-color:rgba(255,123,0, .2)!important;
+}
+
+.ag-tacos .ag-row .ag-cell:first-child{
+  padding-left:20px;
+}
+.ag-tacos .ag-row .ag-cell:last-child{
+  padding-right:20px;
+}
+
+.ag-tacos .ag-header-cell-moving .ag-header-cell-label {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+.ag-tacos .ag-header-cell-moving {
+  background-color: rgb(255,123,0);
+}
+
+.ag-tacos .ag-header-cell-moving-clone {
+  border-right: 1px solid rgb(255,123,0);
+  border-left: 1px solid rgb(255,123,0);
+  background-color: rgba(220,220,220,0.8);
+}
+.ag-tacos .ag-header-group-cell {
+  border-right: 1px solid rgb(255,123,0);
+}
+.ag-tacos .ag-header-group-cell-with-group {
+  border-bottom: 1px solid rgb(255,123,0);
+}
+.ag-tacos .ag-header-cell-label {
+  padding: 4px 2px 4px 2px;
+}
+.ag-tacos .ag-header-cell-text {
+  padding-left: 2px;
+  text-transform: uppercase;
+}
+.ag-tacos .ag-header-group-cell-label {
+  padding: 4px;
+  padding-left: 10px;
+}
+.ag-tacos .ag-header-group-text {
+  margin-right: 2px;
+}
+.ag-tacos .ag-header-cell-menu-button {
+  padding: 5px;
+  margin-top: 4px;
+  border: 1px solid transparent;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box; /* When using bootstrap, box-sizing was set to 'border-box' */
+  line-height: 0px; /* normal line height, a space was appearing below the menu button */
+}
+.ag-tacos .ag-pinned-right-header {
+  border-left: 1px solid rgb(255,123,0);
+}
+.ag-tacos .ag-header-cell-menu-button:hover {
+  background: #95bf81;
+}
+
+.ag-tacos .ag-row-selected {
+  background-color: rgba(255,123,0,.5) !important;
+}
+
+.ag-tacos .ag-body{
+  padding-top: 40px!important;
+}
+
+.ag-tacos .ag-body .ag-row-odd {
+  background-color: #fff;
+}
+.ag-tacos .ag-body .ag-row-even {
+  background-color: #f6f6f6;
+}
+.ag-tacos .ag-floating-top .ag-row {
+  background-color: #f0f0f0;
+}
+.ag-tacos .ag-floating-bottom .ag-row {
+  background-color: #f0f0f0;
+}
+.ag-tacos .ag-overlay-loading-wrapper {
+  background-color: rgba(255,255,255,0.5);
+}
+.ag-tacos .ag-overlay-loading-center {
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.ag-tacos .ag-overlay-no-rows-center {
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.ag-tacos .ag-body {
+  background-color: #fafafa;
+}
+.ag-tacos .ag-group-cell-entire-row {
+  background-color: #aaa;
+  padding: 4px;
+}
+.ag-tacos .ag-footer-cell-entire-row {
+  background-color: #aaa;
+  padding: 4px;
+}
+.ag-tacos .ag-group-cell {
+  font-style: italic;
+}
+.ag-tacos .ag-group-expand {
+  padding-right: 2px;
+}
+.ag-tacos .ag-footer-cell {
+  font-style: italic;
+}
+/*Filter Styles*/
+.ag-tacos .ag-filter-checkbox {
+  height: 12px;
+  width: 12px;
+  margin: 2px 3px 0 5px;
+}
+.ag-tacos .ag-filter-header-container {
+  border-bottom: 1px solid #d3d3d3;
+}
+.ag-tacos .ag-filter-header-container label {
+  display:block;
+  padding: 5px 0;
+  text-transform: uppercase;
+  font-size:85%;
+}
+.ag-tacos .ag-filter-list-viewport {
+    margin-top: 5px;
+}
+.ag-tacos .ag-filter-apply-panel {
+  border-top: 1px solid #d3d3d3;
+  padding: 2px;
+}
+.ag-tacos .ag-filter {
+  background-color: #fff;
+  box-shadow: 0 0 15px 2px rgba(51, 51, 51, 0.4);
+  border-radius: 3px;
+}
+.ag-tacos .ag-filter-item{
+  width: 100%;
+}
+.ag-tacos .ag-filter-filter {
+  margin: 0;
+  width: 100%;
+  border: 0;
+  padding: 5px;
+}
+.ag-tacos .ag-filter-value {
+  margin-left: 4px;
+}
+.ag-tacos .ag-selection-checkbox {
+  margin-left: 4px;
+}
+.ag-tacos .ag-paging-panel {
+  padding: 4px;
+}
+.ag-tacos .ag-paging-button {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.ag-tacos .ag-paging-row-summary-panel {
+  display: inline-block;
+  width: 300px;
+}
+.ag-tacos .ag-column-not-visible {
+  opacity: 0.75;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+  filter: alpha(opacity=75);
+}
+.ag-tacos .ag-not-dragging {
+  border: 1px solid transparent;
+}
+.ag-tacos .ag-drop-target-above {
+  border-top: 5px solid #a9a9a9;
+}
+.ag-tacos .ag-drop-target-below {
+  border-bottom: 5px solid #a9a9a9;
+}
+.ag-tacos .ag-dragging {
+  border: 1px dotted #a9a9a9;
+}
+.ag-tacos .ag-list-item-selected {
+  color: #f0f0f0;
+}
+.ag-tacos .ag-list-item-not-selected {
+  font-style: italic;
+  color: #a0a0a0;
+}
+.ag-tacos .ag-tool-panel-container {
+  background-color: #eee;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #a9a9a9;
+  padding: 4px;
+}
+.ag-tacos .ag-list-selection {
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ag-tacos .ag-popup-list .ag-list-item:hover {
+  background-color: #add8e6;
+}
+.ag-tacos .ag-visible-icons {
+  padding-left: 2px;
+  padding-right: 2px;
+}

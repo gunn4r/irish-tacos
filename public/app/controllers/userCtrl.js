@@ -1,11 +1,14 @@
 angular.module('manage.irishtacos')
   .controller('userCtrl', function($scope, userService){
 
+  $scope.sidebarToggle.right = false;
+
   userService.getUsers().then(function(response){
     $scope.users = response.data;
     $scope.gridOptions.api.setRowData($scope.users);
     $scope.gridOptions.api.sizeColumnsToFit();
   });
+
 
   var agGridColumnDefs = [
       {headerName: "ID", field: '_id'},
@@ -23,7 +26,16 @@ angular.module('manage.irishtacos')
       enableFilter: true,
       enableSorting: true,
       rowSelection: 'single',
-      enableColResize: true
+      enableColResize: true,
+      rowHeight: 40
   };
+
+  //This is broadcast from crudModalCtrl.js
+  $scope.$on('addNewUser', function(event, data){
+    $scope.users.push(data);
+    $scope.gridOptions.api.setRowData($scope.users);
+    $scope.gridOptions.api.sizeColumnsToFit();
+    $scope.sidebarToggle.right = false;
+  });
 
 });

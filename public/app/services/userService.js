@@ -30,6 +30,14 @@ app.service('userService', function($http){
       });
     };
 
+    this.addNewUser = function(newUser){
+      return $http({
+        method: 'POST',
+        url: '/api/user',
+        data: newUser
+      });
+    };
+
 });
 
 

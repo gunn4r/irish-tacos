@@ -42,10 +42,18 @@ angular.module('manage.irishtacos')
       templateUrl: 'app/views/dashboardView.html'
     })
     .state('users', {
+      views: {
+        "": {
+          templateUrl: 'app/views/usersView.html',
+          controller: 'userCtrl'
+        },
+        crudModal: {
+          templateUrl: 'app/templates/forms/userForm.html',
+          controller: 'crudModalCtrl'
+        }
+      },
       parent: 'admin',
-      url: 'users',
-      templateUrl: 'app/views/usersView.html',
-      controller: 'userCtrl'
+      url: 'users'
     });
 
   $urlRouterProvider.otherwise('/login');
