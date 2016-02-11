@@ -25,6 +25,11 @@
 
 .ag-tacos .ag-header-cell {
       line-height: 33px;
+      text-align:left;
+}
+
+.ag-tacos .ag-header-cell:first-child{
+      padding-left: 15px;
 }
 
 .ag-tacos .ag-header-cell:hover,

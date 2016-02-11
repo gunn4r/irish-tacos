@@ -15,24 +15,15 @@ angular.module('manage.irishtacos')
       templateUrl: 'app/views/adminView.html',
       controller: 'adminCtrl',
       resolve: {
-        user: function(userService, $state){
-          return userService.getDummyUser()
+        currentUser: function(userService, $state){
+          return userService.getCurrentUser()
             .then(function(response){
               if(response.status !== 200) {
-                    alert('HERP DERP, ERROR ALERP!');
-                  } else {
-                    return response.data;
-                  }
+                alert('HERP DERP, ERROR ALERT!');
+              } else {
+                return response.data;
+              }
             });
-          // NOTE: UNCOMMENT FOR WORKING LOGIN / REAL USER
-          // return userService.getCurrentUser()
-          //   .then(function(response){
-          //     if(response.status !== 200) {
-          //       alert('HERP DERP, ERROR ALERT!');
-          //     } else {
-          //       return response.data;
-          //     }
-          //   });
         }
       }
     })

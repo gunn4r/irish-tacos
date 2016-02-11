@@ -5,14 +5,9 @@ app.service('userService', function($http){
   	this.getCurrentUser = function(){
   		return $http({
   			method: 'GET',
-  			url: '/api/currentuser'
-  		});
-  	};
-
-    this.getDummyUser = function(){
-  		return $http({
-  			method: 'GET',
-  			url: '/api/user?_id=56b90ed8cae4720c34f6ad4e'
+        url: '/api/user/?id=56b90ed8cae4720c34f6ad4e'
+        //NOTE: Uncomment for working LOGIN
+        //url: '/api/currentuser'
   		});
   	};
 
@@ -20,7 +15,7 @@ app.service('userService', function($http){
       if(userId){
         return $http({
           method: 'GET',
-          url: '/api/user/?_id=' + userId
+          url: '/api/user/?id=' + userId
         });
       }
 
@@ -35,6 +30,13 @@ app.service('userService', function($http){
         method: 'POST',
         url: '/api/user',
         data: newUser
+      });
+    };
+
+    this.deleteUser = function(userId){
+      return $http({
+        method: 'DELETE',
+        url: '/api/user/?id=' + userId
       });
     };
 

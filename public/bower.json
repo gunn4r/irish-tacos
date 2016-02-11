@@ -21,6 +21,7 @@
   ],
   "dependencies": {
     "font-awesome": "fontawesome#^4.5.0",
-    "ag-grid": "^3.3.0"
+    "ag-grid": "^3.3.0",
+    "sweetalert": "^1.1.3"
   }
 }

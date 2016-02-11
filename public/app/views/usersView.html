@@ -5,6 +5,18 @@
     </div>
   </div>
 
-  <div class="inner-content" style="height:90vh;">
-    <div ag-grid="gridOptions" class="ag-tacos" style="height: 100%"></div>
+  <div class="inner-content">
+
+    <table style="width:100%;">
+      <tr ng-repeat="user in users">
+        <td>{{user._id}}</td>
+        <td>{{user.name.first}}</td>
+        <td>{{user.name.last}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.type}}</td>
+        <td><button ng-click="deleteUser(user._id)">Delete</button> <button ng-click="">Edit</button></td>
+      </tr>
+    </table>
+
   </div>

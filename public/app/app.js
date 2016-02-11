@@ -1,8 +1,7 @@
-agGrid.initialiseAgGridWithAngular1(angular);
-
 var app = angular.module('manage.irishtacos', [
   'ui.router',
-  'agGrid'
+  'ui.grid',
+  'ui.grid.selection'
 ]);
 
 

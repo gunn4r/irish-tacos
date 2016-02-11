@@ -50,8 +50,8 @@ app.use(passport.session());
 //Users CRUD
 app.post('/api/user', userCtrl.create);
 app.get('/api/user', userCtrl.read);
-app.put('/api/user/:id', userCtrl.update);
-app.delete('/api/user/:id', userCtrl.delete);
+app.put('/api/user', userCtrl.update);
+app.delete('/api/user', userCtrl.delete);
 
 //Vendors Crud
 app.post('/api/vendor', vendorCtrl.create);
