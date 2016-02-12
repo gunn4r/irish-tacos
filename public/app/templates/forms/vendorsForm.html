@@ -1,0 +1,49 @@
+<h2>{{action}} a Vendor</h2>
+<div id="data-form">
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.name }">
+    <input class="input__field input__field--ruri" type="text" id="add-vendor-name" ng-model="crudData.name" />
+    <label class="input__label input__label--ruri" for="add-vendor-name">
+      <span class="input__label-content input__label-content--ruri">Name</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.phone }">
+    <input class="input__field input__field--ruri" type="text" id="add-vendor-phone" ng-model="crudData.phone"/>
+    <label class="input__label input__label--ruri" for="add-vendor-phone">
+      <span class="input__label-content input__label-content--ruri">Phone</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.address.street }">
+    <input class="input__field input__field--ruri" type="text" id="add-vendor-street" ng-model="crudData.address.street"/>
+    <label class="input__label input__label--ruri" for="add-vendor-street">
+      <span class="input__label-content input__label-content--ruri">Street</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.address.city }">
+    <input class="input__field input__field--ruri" type="text" id="add-vendor-city" ng-model="crudData.address.city"/>
+    <label class="input__label input__label--ruri" for="add-vendor-city">
+      <span class="input__label-content input__label-content--ruri">City</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.address.state }">
+    <input class="input__field input__field--ruri" type="text" id="add-vendor-state" ng-model="crudData.address.state"/>
+    <label class="input__label input__label--ruri" for="add-vendor-state">
+      <span class="input__label-content input__label-content--ruri">State</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.address.zip }">
+    <input class="input__field input__field--ruri" type="text" id="add-vendor-zip" ng-model="crudData.address.zip"/>
+    <label class="input__label input__label--ruri" for="add-vendor-zip">
+      <span class="input__label-content input__label-content--ruri">Zip</span>
+    </label>
+  </span>
+
+  <button class="btn btn-3 btn-3e icon-arrow-right" ng-click="crudAction(crudData)">{{action}} Vendor</button>
+
+  <pre>{{crudData}}</pre>
+</div>

@@ -33,27 +33,23 @@
 {
   "name"            : "Costco",
   "phone"           : "5559238472",
-  "addressStreet"   : "123 S 987 W",
-  "addressCity"     : "Orem",
-  "addressState"    : "UT",
-  "addressZip"      : "84604",
-  "meta"            : {
-                      "createdBy"       : "56b6deb55480fee4107a22f9",
-                      "updatedBy"       : "56b6debc5480fee4107a22fa"
-                      }
+  "address" : {
+    "street"   : "123 S 987 W",
+    "city"     : "Orem",
+    "state"    : "UT",
+    "zip"      : "84604"
+  }
 }
 
 {
   "name"            : "Walmart",
-  "phone"           : "8019874561",
-  "addressStreet"   : "2250 W Sandhill Drive",
-  "addressCity"     : "Orem",
-  "addressState"    : "UT",
-  "addressZip"      : "84060",
-  "meta"            : {
-                      "createdBy"       : "56b6debc5480fee4107a22fa",
-                      "updatedBy"       : "56b6deb55480fee4107a22f9"
-                      }
+  "phone"           : "1234567890",
+  "address" : {
+    "street"   : "555 N 350 W",
+    "city"     : "Provo",
+    "state"    : "UT",
+    "zip"      : "84604"
+  }
 }
 
 //Dummy Brands

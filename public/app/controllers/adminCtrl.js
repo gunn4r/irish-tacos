@@ -1,6 +1,6 @@
-var app = angular.module('manage.irishtacos');
+angular.module('manage.irishtacos')
 
-app.controller('adminCtrl', function($scope, currentUser, loginService){
+.controller('adminCtrl', function($scope, currentUser, loginService){
 
   $scope.currentUser = currentUser;
 
@@ -15,11 +15,7 @@ app.controller('adminCtrl', function($scope, currentUser, loginService){
         });
   };
 
-  $scope.sidebarToggle = { right: false };
 
-  $scope.modalClose = function(){
-    $scope.$broadcast('modalClose');
-    $scope.sidebarToggle.right = false;
-  };
+  $scope.state = $scope.$state.current.name.slice(0, $scope.$state.current.name.length-1);
 
 });

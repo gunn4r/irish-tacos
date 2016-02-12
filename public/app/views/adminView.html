@@ -1,9 +1,3 @@
 
 <aside id="left-sidebar" ng-include="'app/templates/sidebar-left.html'"></aside>
-
-<aside id="right-sidebar" ng-class="{ 'toggled': sidebarToggle.right === true }">
-  <span id="closeModal" ng-click="modalClose()"><i class="fa fa-times"></i></span>
-  <div class="inner-content" ui-view="crudModal"></div>
-</aside>
-
 <div ui-view id="content"></div>

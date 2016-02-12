@@ -40,11 +40,22 @@ app.service('userService', function($http){
       });
     };
 
+    this.updateUser = function(user){
+      var userData = {
+        "name" : {
+          "first" : user.name.first,
+          "last" : user.name.last
+        },
+        "email" : user.email,
+        "phone" : user.phone,
+        "password": user.password,
+        "type": user.type
+      };
+      return $http({
+        method: 'PUT',
+        url: '/api/user/?id=' + user._id,
+        data: userData
+      });
+    };
+
 });
-
-
-// .then(function(response){
-//   return response.data;
-// }, function(error){
-//   return error;
-// })

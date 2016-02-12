@@ -1,0 +1,53 @@
+<h2>{{action}} a User</h2>
+<div id="addUserForm">
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudUser.name.first, 'input--error': loginError}">
+    <input class="input__field input__field--ruri" type="text" id="add-user-first-name" ng-model="crudUser.name.first" />
+    <label class="input__label input__label--ruri" for="add-user-first-name">
+      <span class="input__label-content input__label-content--ruri">First Name</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudUser.name.last, 'input--error': loginError}">
+    <input class="input__field input__field--ruri" type="text" id="add-user-last-name" ng-model="crudUser.name.last"/>
+    <label class="input__label input__label--ruri" for="add-user-last-name">
+      <span class="input__label-content input__label-content--ruri">Last Name</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudUser.email, 'input--error': loginError}">
+    <input class="input__field input__field--ruri" type="text" id="add-user-email" ng-model="crudUser.email"/>
+    <label class="input__label input__label--ruri" for="add-user-email">
+      <span class="input__label-content input__label-content--ruri">Email</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudUser.phone, 'input--error': loginError}">
+    <input class="input__field input__field--ruri" type="text" id="add-user-phone" ng-model="crudUser.phone"/>
+    <label class="input__label input__label--ruri" for="add-user-phone">
+      <span class="input__label-content input__label-content--ruri">Phone</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudUser.password, 'input--error': loginError}">
+    <input class="input__field input__field--ruri" type="password" id="add-user-password" ng-model="crudUser.password"/>
+    <label class="input__label input__label--ruri" for="add-user-password">
+      <span class="input__label-content input__label-content--ruri">Password</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudUser.type, 'input--error': loginError}">
+    <select name="add-user-type" id="add-user-type" class="input__field input__field--ruri" ng-model="crudUser.type">
+      <option value="employee">Employee</option>
+      <option value="manager">Manager</option>
+      <option value="admin">Admin</option>
+    </select>
+    <label class="input__label input__label--ruri" for="add-user-type">
+      <span class="input__label-content input__label-content--ruri">User Role</span>
+    </label>
+  </span>
+
+  <button class="btn btn-3 btn-3e icon-arrow-right" ng-click="crudAction(crudUser)">{{action}} User</button>
+
+  <pre>{{crudUser}}</pre>
+</div>

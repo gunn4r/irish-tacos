@@ -143,6 +143,7 @@ body.login ui-view {
   height: 100%;
   box-shadow: 0 0 15px 2px rgba(51, 51, 51, 0.4);
   right: -20%;
+  top:0;
   padding: 0;
   z-index: 10;
   color: #eaeaea;
@@ -179,7 +180,7 @@ body.login ui-view {
   padding: 20px;
 }
 
-#content .inner-content {
+#content > .inner-content {
   background: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
@@ -202,11 +203,11 @@ body.login ui-view {
   top: -5px;
 }
 
-.page-header .actions .add{
+.page-header .actions {
   text-transform: uppercase;
 }
 
-.page-header .actions .add:hover{
+.page-header .actions button:hover{
   cursor: pointer;
 }
 
@@ -973,12 +974,36 @@ footer {
 
 .btn-3e.btn-sm:after {
   position: absolute;
-  width: 27%;
+  width: 42px;
 }
 
 .btn-3e.btn-sm:hover:after {
-	width: 30%;
+	width: 47px;
 }
+
+
+/*Action Buttons*/
+.btn.btn-delete {
+  background: rgba(210, 16, 16, 0.8);
+}
+
+.btn.btn-delete:hover,
+.btn.btn-delete:active {
+  background: #337714;
+}
+
+.btn.btn-edit {
+  background: rgba(44, 80, 207, 0.8);
+}
+
+.btn.btn-edit:hover,
+.btn.btn-edit:active {
+  background: #337714;
+}
+
+
+
+
 
 /* Button 4 */
 .btn-4 {

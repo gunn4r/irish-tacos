@@ -1,22 +1,15 @@
+<crud-modal state="$state.current.name" toggle="toggleRightModal" action="crudAction" update="userToUpdate"></crud-modal>
+
   <div class="page-header">
     <h1>{{$state.current.name}}</h1>
     <div class="actions">
-      <button class="btn btn-3 btn-3e btn-sm icon-plus add" ng-click="sidebarToggle.right = !sidebarToggle.right">Add {{$state.current.name}}</button>
+      <button class="btn btn-3 btn-3e btn-sm icon-cog btn-edit" ng-if="selectedRow" ng-click="toggleUpdateUser(selectedRow)">Edit</button>
+      <button class="btn btn-3 btn-3e btn-sm icon-remove-2 btn-delete" ng-if="selectedRow" ng-click="deleteUser(selectedRow._id)">Delete</button>
+      <button class="btn btn-3 btn-3e btn-sm icon-plus btn-add" ng-click="toggleCreateUser()">Create New</button>
     </div>
   </div>
 
-  <div class="inner-content">
-
-    <table style="width:100%;">
-      <tr ng-repeat="user in users">
-        <td>{{user._id}}</td>
-        <td>{{user.name.first}}</td>
-        <td>{{user.name.last}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.phone}}</td>
-        <td>{{user.type}}</td>
-        <td><button ng-click="deleteUser(user._id)">Delete</button> <button ng-click="">Edit</button></td>
-      </tr>
-    </table>
-
+  <div class="inner-content" style="height:80vh;">
+    <div ui-grid="gridOptions" ui-grid-selection style="height:100%; width:100%;"></div>
+    {{selectedRow}}
   </div>
