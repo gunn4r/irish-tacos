@@ -1,0 +1,52 @@
+<div id="data-form">
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.name.first}">
+    <input class="input__field input__field--ruri" type="text" id="add-user-first-name" ng-model="crudData.name.first" />
+    <label class="input__label input__label--ruri" for="add-user-first-name">
+      <span class="input__label-content input__label-content--ruri">First Name</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.name.last}">
+    <input class="input__field input__field--ruri" type="text" id="add-user-last-name" ng-model="crudData.name.last"/>
+    <label class="input__label input__label--ruri" for="add-user-last-name">
+      <span class="input__label-content input__label-content--ruri">Last Name</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.email}">
+    <input class="input__field input__field--ruri" type="text" id="add-user-email" ng-model="crudData.email"/>
+    <label class="input__label input__label--ruri" for="add-user-email">
+      <span class="input__label-content input__label-content--ruri">Email</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.phone}">
+    <input class="input__field input__field--ruri" type="text" id="add-user-phone" ng-model="crudData.phone"/>
+    <label class="input__label input__label--ruri" for="add-user-phone">
+      <span class="input__label-content input__label-content--ruri">Phone</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.password}">
+    <input class="input__field input__field--ruri" type="password" id="add-user-password" ng-model="crudData.password"/>
+    <label class="input__label input__label--ruri" for="add-user-password">
+      <span class="input__label-content input__label-content--ruri">Password</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.type}">
+    <select name="add-user-type" id="add-user-type" class="input__field input__field--ruri" ng-model="crudData.type">
+      <option value="employee">Employee</option>
+      <option value="manager">Manager</option>
+      <option value="admin">Admin</option>
+    </select>
+    <label class="input__label input__label--ruri" for="add-user-type">
+      <span class="input__label-content input__label-content--ruri">User Role</span>
+    </label>
+  </span>
+
+  <button class="btn btn-3 btn-3e icon-arrow-right" ng-click="crudAction(crudData)">{{action}} {{state}}</button>
+
+  <pre>{{crudData}}</pre>
+</div>

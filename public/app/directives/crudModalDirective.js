@@ -8,19 +8,18 @@ angular.module('manage.irishtacos')
         scope: {
           state: '=',
           toggle: '=',
-          action: '=',
-          update: '='
+          action: '='
         },
         controller: function($scope, $rootScope, userService, errService, dataService){
-
-          $scope.formTemplate = { url: '/app/templates/forms/' + $scope.state + 'Form.html' };
-
-          var state = $scope.state.slice(0, $scope.state.length-1);
 
           $scope.crudData = {};
 
           $scope.$on('dataToUpdate', function(event, data){
             $scope.crudData = data;
+          });
+
+          $scope.$on('brands', function(event, data){
+            $scope.brands = data;
           });
 
           $scope.modalClose = function(){
@@ -31,10 +30,10 @@ angular.module('manage.irishtacos')
           $scope.crudAction = function(data){
             switch ($scope.action) {
               case 'Create':
-                $scope.createData(state, data);
+                $scope.createData($scope.state, data);
                 break;
               case 'Update':
-                $scope.updateData(state, data);
+                $scope.updateData($scope.state, data);
               break;
             }
           };
@@ -61,6 +60,10 @@ angular.module('manage.irishtacos')
               function(error){errService.error(error);}
             );
           };
+
+
+
+
 
 
 
@@ -108,6 +111,8 @@ angular.module('manage.irishtacos')
           //     function(error){errService.error(error);}
           //   );
           // };
+
+
 
 
 

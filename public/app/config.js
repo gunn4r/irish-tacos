@@ -31,6 +31,12 @@ angular.module('manage.irishtacos')
       }
     })
 
+    .state('dashboard', {
+      parent: 'admin',
+      url: 'dashboard',
+      templateUrl: 'app/views/dashboardView.html'
+    })
+
     .state('crud', {
       abstract: true,
       parent: 'admin',
@@ -38,17 +44,23 @@ angular.module('manage.irishtacos')
       controller: 'crudCtrl'
     })
 
-    .state('dashboard', {
-      parent: 'admin',
-      url: 'dashboard',
-      templateUrl: 'app/views/dashboardView.html'
-    })
-
     .state('vendors', {
       templateUrl: 'app/views/vendorsView.html',
       controller: 'vendorCtrl',
       parent: 'crud',
       url: 'vendors'
+    })
+
+    .state('brands', {
+      controller: 'brandCtrl',
+      parent: 'crud',
+      url: 'brands'
+    })
+
+    .state('inventoryitems', {
+      controller: 'inventoryCtrl',
+      parent: 'crud',
+      url: 'inventory'
     })
 
     .state('users', {

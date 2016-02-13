@@ -66,10 +66,10 @@ app.put('/api/brand', brandCtrl.update);
 app.delete('/api/brand', brandCtrl.delete);
 
 //Inventory Crud
-app.post('/api/inventory', inventoryCtrl.create);
-app.get('/api/inventory', inventoryCtrl.read);
-app.put('/api/inventory', inventoryCtrl.update);
-app.delete('/api/inventory', inventoryCtrl.delete);
+app.post('/api/inventoryitem', inventoryCtrl.create);
+app.get('/api/inventoryitem', inventoryCtrl.read);
+app.put('/api/inventoryitem', inventoryCtrl.update);
+app.delete('/api/inventoryitem', inventoryCtrl.delete);
 
 //Receipt Crud
 app.post('/api/receipt', receiptCtrl.create);

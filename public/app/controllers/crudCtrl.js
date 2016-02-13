@@ -1,9 +1,9 @@
-var app = angular.module('manage.irishtacos');
-
-app.controller('crudCtrl', function($scope, errService, dataService){
+angular.module('manage.irishtacos')
+.controller('crudCtrl', function($scope, errService, dataService, $state){
 
   $scope.toggleRightModal = false;
   $scope.crudAction = '';
+  $scope.selectedRow = null;
 
   //UI Grid Options
   $scope.gridOptions = {
@@ -17,14 +17,27 @@ app.controller('crudCtrl', function($scope, errService, dataService){
     onRegisterApi: function(gridApi){
         $scope.gridApi = gridApi;
         gridApi.selection.on.rowSelectionChanged($scope, function(row){ //This is what does the row selection and puts that rows data on the scope.
-          if(row.isSelected) $scope.selectedRow = row.entity;
-            else $scope.selectedRow = null;
+          if(row.isSelected) {
+            $scope.selectedRow = row.entity;
+            $scope.$broadcast('dataToUpdate', row.entity);
+          } else {
+            $scope.selectedRow = null;
+            $scope.$broadcast('dataToUpdate', null);
+            $scope.toggleRightModal = false;
+          }
         });
     }
   };
 
+  //If on a state that needs the brands, go get it.
+  if($state.current.name === 'inventoryitems'){
+    dataService.getData('brand').then(function(response){
+      $scope.$broadcast('brands', response.data);
+    },function(error){errService.error(error);});
+  }
+
   $scope.getData = function(){
-    dataService.getData($scope.state).then(function(response){
+    dataService.getData($state.current.name.slice(0, $state.current.name.length-1)).then(function(response){
       $scope.gridOptions.data = response.data;
     });
   };
@@ -38,6 +51,7 @@ app.controller('crudCtrl', function($scope, errService, dataService){
   $scope.toggleCreate = function(){
     $scope.crudAction = 'Create';
     $scope.toggleRightModal = true;
+    $scope.$broadcast('dataToUpdate', null); //This is broadcast TO crudModalDirective.js
   };
 
   $scope.toggleUpdate = function(data){
@@ -62,7 +76,7 @@ app.controller('crudCtrl', function($scope, errService, dataService){
           function(response){
             swal({
               title: 'Deleted!',
-              text: 'The user has been permanently deleted.',
+              text: 'The ' + state + ' has been permanently deleted.',
               type: 'success',
               timer: 1000,
               showConfirmButton: false
@@ -73,5 +87,6 @@ app.controller('crudCtrl', function($scope, errService, dataService){
           function(error){ errService.error(error); });
     });
   };
+
 
 });

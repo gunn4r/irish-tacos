@@ -8,7 +8,6 @@ module.exports = {
       var user = new User();
       req.body.meta = {};
       user = _.extend(user, req.body);
-      console.log(user);
       user.save(function(err, result) {
             if(err) return res.status(500).send(err);
             result.password = null;
@@ -30,7 +29,6 @@ module.exports = {
     update : function(req,res){
       User.findById(req.query.id, function(err, user){
         user = _.extend(user, req.body);
-        console.log(user);
         user.save(includes.apiResultFunc(req, res));
       });
     },

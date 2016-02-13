@@ -1,0 +1,65 @@
+<div id="add-data">
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.name}">
+    <input class="input__field input__field--ruri" type="text" id="add-inventoryitem-name" ng-model="crudData.name" />
+    <label class="input__label input__label--ruri" for="add-inventoryitem-name">
+      <span class="input__label-content input__label-content--ruri">Name</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.brand}">
+    <select name="add-user-type" id="add-inventoryitem-brand" class="input__field input__field--ruri" ng-model="crudData.brand" ng-options="brand._id as brand.name for brand in brands">
+    </select>
+    <label class="input__label input__label--ruri" for="add-inventoryitem-brand">
+      <span class="input__label-content input__label-content--ruri">Brand</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.quantity}">
+    <input class="input__field input__field--ruri" type="number" id="add-inventoryitem-unitquantity" ng-model="crudData.quantity" />
+    <label class="input__label input__label--ruri" for="add-inventoryitem-unitquantity">
+      <span class="input__label-content input__label-content--ruri">Unit Quantity</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.units}">
+    <input class="input__field input__field--ruri" type="text" id="add-inventoryitem-units" ng-model="crudData.units" />
+    <label class="input__label input__label--ruri" for="add-inventoryitem-units">
+      <span class="input__label-content input__label-content--ruri">Unit</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.type}">
+    <select name="add-user-type" id="add-user-type" class="input__field input__field--ruri" ng-model="crudData.type">
+      <option value="Consumable">Consumable</option>
+      <option value="Non-Consumable">Non-Consumable</option>
+    </select>
+    <label class="input__label input__label--ruri" for="add-user-type">
+      <span class="input__label-content input__label-content--ruri">Type</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.category}">
+    <input class="input__field input__field--ruri" type="text" id="add-inventoryitem-category" ng-model="crudData.category" />
+    <label class="input__label input__label--ruri" for="add-inventoryitem-category">
+      <span class="input__label-content input__label-content--ruri">Category</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.parLevel}">
+    <input class="input__field input__field--ruri" type="text" id="add-inventoryitem-parlevel" ng-model="crudData.parLevel" />
+    <label class="input__label input__label--ruri" for="add-inventoryitem-parlevel">
+      <span class="input__label-content input__label-content--ruri">Par Level</span>
+    </label>
+  </span>
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.stock}">
+    <input class="input__field input__field--ruri" type="text" id="add-inventoryitem-stock" ng-model="crudData.stock" />
+    <label class="input__label input__label--ruri" for="add-inventoryitem-stock">
+      <span class="input__label-content input__label-content--ruri">Stock</span>
+    </label>
+  </span>
+
+  <button class="btn btn-3 btn-3e icon-arrow-right" ng-click="crudAction(crudData)">{{action}} {{state}}</button>
+  <pre>{{crudData}}</pre>
+</div>

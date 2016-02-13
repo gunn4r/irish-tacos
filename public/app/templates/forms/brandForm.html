@@ -1,0 +1,13 @@
+<div id="data-form">
+
+  <span class="input input--ruri" ng-class="{'input--filled': crudData.name }">
+    <input class="input__field input__field--ruri" type="text" id="add-brand-name" ng-model="crudData.name" />
+    <label class="input__label input__label--ruri" for="add-brand-name">
+      <span class="input__label-content input__label-content--ruri">Name</span>
+    </label>
+  </span>
+
+  <button class="btn btn-3 btn-3e icon-arrow-right" ng-click="crudAction(crudData)">{{action}} {{state}}</button>
+
+  <pre>{{crudData}}</pre>
+</div>

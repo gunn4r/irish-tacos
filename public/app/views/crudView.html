@@ -1,4 +1,4 @@
-<crud-modal state="$state.current.name" toggle="toggleRightModal" action="crudAction" update="dataToUpdate"></crud-modal>
+<crud-modal state="$state.current.name.slice(0, $state.current.name.length-1)" toggle="toggleRightModal" action="crudAction"></crud-modal>
 
   <div class="page-header">
     <h1>{{$state.current.name}}</h1>
@@ -11,6 +11,6 @@
 
   <div class="inner-content" style="height:80vh;">
     <div ui-grid="gridOptions" ui-grid-selection style="height:100%; width:100%;"></div>
-    {{selectedRow}}
     <div ui-view></div>
+    <pre>{{selectedRow}}</pre>
   </div>
