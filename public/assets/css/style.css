@@ -58,6 +58,10 @@ body.login ui-view {
   position: relative;
 }
 
+.login-form span:first-child{
+  margin-right:2em;
+}
+
 /****************************
 * SHARED: ADMIN STYLES
 ****************************/
@@ -224,6 +228,63 @@ body.login ui-view {
 footer {
   margin-left: 250px;
   padding: 20px;
+}
+
+/****************************
+* DASHBOARD STYLES
+****************************/
+.widget {
+  padding: 0 20px;
+}
+
+.widget.widget-sm-stat .fa {
+  color:rgba(255,255,255,.4);
+  font-size:3.5em;
+}
+
+.widget .widget-inner:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2);
+  width: 70px;;
+  height: 100%;
+  top:0;
+  left:0;
+}
+
+.widget .widget-inner{
+  background: #fff;
+  padding: 10px;
+  position: relative;
+}
+
+
+.widget .widget-title {
+  font-size:1.3em;
+  text-transform: capitalize;
+}
+
+.widget .widget-inner.green {
+  background: #2B6C35;
+  color: #fff;
+}
+
+.widget .widget-inner.orange {
+  background: #ff7b00;
+  color: #fff;
+}
+
+.widget .widget-inner.yellow {
+  background: #ccbd34;
+  color: #fff;
+}
+
+.widget .widget-inner.small-stat{
+}
+
+.widget.widget-sm-stat .widget-content {
+  font-size:1.7em;
 }
 
 /****************************

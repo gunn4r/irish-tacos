@@ -14,7 +14,6 @@
       <span class="input__label-content input__label-content--ruri">Brand</span>
     </label>
   </span>
-
   <span class="input input--ruri" ng-class="{'input--filled': crudData.quantity}">
     <input class="input__field input__field--ruri" type="number" id="add-inventoryitem-unitquantity" ng-model="crudData.quantity" />
     <label class="input__label input__label--ruri" for="add-inventoryitem-unitquantity">
@@ -61,5 +60,5 @@
   </span>
 
   <button class="btn btn-3 btn-3e icon-arrow-right" ng-click="crudAction(crudData)">{{action}} {{state}}</button>
-  <pre>{{crudData}}</pre>
+  <!-- <pre>{{crudData}}</pre> -->
 </div>
