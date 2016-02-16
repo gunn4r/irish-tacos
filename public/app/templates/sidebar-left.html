@@ -15,6 +15,7 @@
   <a ui-sref="inventoryitems">Inventory</a>
   <a ui-sref="vendors">Vendors</a>
   <a ui-sref="brands">Brands</a>
+  <a ng-if="$state.get('students')" ui-sref="students">Students</a>
   <a ui-sref="login">Login</a>
   <a ng-click="logout()">Logout</a>
 </nav>

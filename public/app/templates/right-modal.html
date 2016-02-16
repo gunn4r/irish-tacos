@@ -1,5 +1,8 @@
-<aside id="right-sidebar" ng-class="{ 'toggled': toggle === true }">
-  <span id="closeModal" ng-click="modalClose()"><i class="fa fa-times"></i></span>
-  <h2 class="modal-header">{{action}} a {{state}}</h2>
-  <div class="inner-content" ng-include="'/app/templates/forms/' + state + 'Form.html'"></div>
-</aside>
+<div>
+  <div class="modal-overlay" ng-show="toggle" ng-class="{ 'toggled': toggle }" ng-click="modalClose()"></div>
+  <aside id="right-sidebar" ng-class="{ 'toggled': toggle }">
+    <span id="closeModal" ng-click="modalClose()"><i class="fa fa-times"></i></span>
+    <h2 class="modal-header">{{action}} a {{state}}</h2>
+    <div class="inner-content" ng-include="'/app/templates/forms/' + state + 'Form.html'"></div>
+  </aside>
+</div>

@@ -23,8 +23,11 @@ angular.module('manage.irishtacos')
           });
 
           $scope.modalClose = function(){
+            console.log('Before Modal Close:', $scope.crudData);
             $scope.toggle = false;
-            $scope.crudData = {};
+            $scope.crudData = null;
+            $rootScope.$broadcast('modalClosed');
+            console.log('After Modal Close:', $scope.crudData);
           };
 
           $scope.crudAction = function(data){
@@ -60,61 +63,6 @@ angular.module('manage.irishtacos')
               function(error){errService.error(error);}
             );
           };
-
-
-
-
-
-
-
-          // $scope.crudUser = {};
-          //
-          // $scope.$on('userToUpdate', function(event, data){
-          //   $scope.crudUser = data;
-          // });
-          //
-          // $scope.modalClose = function(){
-          //   $scope.toggle = false;
-          //   $scope.crudUser = {};
-          // };
-          //
-          // //////////////////////////////////////////
-          // ////////// USERS ////////////////////////
-          // /////////////////////////////////////////
-          // $scope.crudAction = function(data){
-          //   switch ($scope.action) {
-          //     case 'Create':
-          //       $scope.createUser(data);
-          //       break;
-          //     case 'Update':
-          //       $scope.updateUser(data);
-          //     break;
-          //   }
-          // };
-          //
-          // $scope.createUser = function(user){
-          //   userService.addNewUser(user)
-          //   .then(
-          //     function(response){
-          //       $rootScope.$broadcast('addNewUser', response.data);
-          //       $scope.modalClose();
-          //     },
-          //     function(error){ errService.error(error); }
-          //   );
-          // };
-          //
-          // $scope.updateUser = function(user){
-          //   userService.updateUser(user).then(
-          //     function(response){
-          //       $scope.modalClose();
-          //     },
-          //     function(error){errService.error(error);}
-          //   );
-          // };
-
-
-
-
 
         }//END CONTROLLER FUNCTION
     };//END DIRECTIVE RETURN OBJECT

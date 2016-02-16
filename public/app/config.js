@@ -21,11 +21,10 @@ angular.module('manage.irishtacos')
           return userService.getCurrentUser()
             .then(
               function(response){
-                return response.data;
+                if(response.status == 200) { console.log(response); return response.data; }
+                  else { errService.error(response); }
               },
-              function(error){
-                errService.error(error);
-              }
+              function(error){ errService.error(error); }
             );
         }
       }

@@ -45,10 +45,15 @@ angular.module('manage.irishtacos')
   //This is broadcast FROM crudModalDirective.js
   $scope.$on('dataAdded', function(){
     $scope.getData();
+  });
+
+  $scope.$on('modalClosed', function(){
     $scope.selectedRow = null;
+    $scope.gridApi.selection.clearSelectedRows();
   });
 
   $scope.toggleCreate = function(){
+    $scope.selectedRow = null;
     $scope.crudAction = 'Create';
     $scope.toggleRightModal = true;
     $scope.$broadcast('dataToUpdate', null); //This is broadcast TO crudModalDirective.js

@@ -1,9 +1,15 @@
-var app = angular.module('manage.irishtacos');
+angular.module('manage.irishtacos')
 
-app.service('errService', function(){
+.service('errService', function(){
   this.error = function(err){
-    var message  = err.data.message;
-    var status = 'Message: ' + err.status + ' || Status:' + err.statusText;
+    var message, status;
+    if(err.data) {
+      message  = err.data.message;
+      status = 'Message: ' + err.status + ' || Status:' + err.statusText;
+    } else {
+      message = 'Unknown Error';
+      status = 'Unknown Status';
+    }
     console.error(message, status);
 
     swal({

@@ -3,14 +3,14 @@
 </div>
 <div class="login-form">
     <span class="input input--ruri" ng-class="{'input--filled': user.email, 'input--error': loginError}">
-      <input class="input__field input__field--ruri" type="text" id="input-26" ng-model="user.email" />
-      <label class="input__label input__label--ruri" for="input-26">
+      <input class="input__field input__field--ruri" type="text" id="loginUsername" ng-model="user.email" />
+      <label class="input__label input__label--ruri" for="loginUsername">
         <span class="input__label-content input__label-content--ruri">Username</span>
       </label>
     </span>
     <span class="input input--ruri" ng-class="{'input--filled': user.password, 'input--error': loginError}">
-      <input class="input__field input__field--ruri" type="text" id="input-27" ng-model="user.password"/>
-      <label class="input__label input__label--ruri" for="input-27">
+      <input class="input__field input__field--ruri" type="password" id="loginPassword" ng-model="user.password"/>
+      <label class="input__label input__label--ruri" for="loginPassword">
         <span class="input__label-content input__label-content--ruri">Password</span>
       </label>
     </span>
