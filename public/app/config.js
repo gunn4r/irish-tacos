@@ -21,8 +21,8 @@ angular.module('manage.irishtacos')
           return userService.getCurrentUser()
             .then(
               function(response){
-                if(response.status == 200) { console.log(response); return response.data; }
-                  else { errService.error(response); }
+                if(response.status == 200) return response.data;
+                  else errService.error(response);
               },
               function(error){ errService.error(error); }
             );
