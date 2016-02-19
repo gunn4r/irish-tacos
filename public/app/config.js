@@ -44,7 +44,6 @@ angular.module('manage.irishtacos')
     })
 
     .state('vendors', {
-      templateUrl: 'app/views/vendorsView.html',
       controller: 'vendorCtrl',
       parent: 'crud',
       url: 'vendors'
