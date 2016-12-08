@@ -1,5 +1,5 @@
 //Setup Environment Variables
-require('dotenv').config({path: './bin/.env'});
+//require('dotenv').config({path: './bin/.env'});
 
 //Dependencies
 var express = require('express'),
