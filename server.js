@@ -118,7 +118,7 @@ app.get('/api/logout', function(req, res) {
 app.get('/api/currentUser', userCtrl.getCurrentUser);
 
 //Server and DB Init
-var port = (process.env.port || process.env.MIT_PORT);
+var port = (process.env.port);
 var mongoUri = process.env.MIT_MONGO_URI;
 
 mongoose.set('debug', true);
