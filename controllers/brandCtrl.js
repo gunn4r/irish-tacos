@@ -23,8 +23,9 @@ module.exports = {
 
   update : function(req,res){
     Brand.findById(req.query.id, function(err, brand){
-      brand = _.extend(brand, req.body);
-      brand.save(includes.apiResultFunc(req, res));
+      var updatedBrand = new Brand();
+      updatedBrand = _.extend(brand, req.body);
+      updatedBrand.save(includes.apiResultFunc(req, res));
     });
   },
 

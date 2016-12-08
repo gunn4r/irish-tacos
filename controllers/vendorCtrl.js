@@ -23,8 +23,9 @@ module.exports = {
 
   update : function(req,res){
     Vendor.findById(req.query.id, function(err, vendor){
-      vendor = _.extend(vendor, req.body);
-      vendor.save(includes.apiResultFunc(req, res));
+      var updatedVendor = new Vendor();
+      updatedVendor = _.extend(vendor, req.body);
+      updatedVendor.save(includes.apiResultFunc(req, res));
     });
   },
 

@@ -62,6 +62,14 @@ body.login ui-view {
   margin-right:2em;
 }
 
+body.login .input-message{
+	text-align: center;
+    z-index: 1000;
+    color: red;
+    padding: 30px;
+    background: rgba(255,255,255,.85);
+}
+
 /****************************
 * SHARED: ADMIN STYLES
 ****************************/

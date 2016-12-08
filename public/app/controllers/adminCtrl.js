@@ -1,6 +1,6 @@
 angular.module('manage.irishtacos')
 
-.controller('adminCtrl', function($scope, currentUser, loginService){
+.controller('adminCtrl', function($scope, currentUser, loginService, $state){
 
   $scope.currentUser = currentUser;
 
@@ -8,7 +8,7 @@ angular.module('manage.irishtacos')
     return loginService.userLogout()
       .then(
         function(response){
-          console.log(response);
+          $state.go('login');
         },
         function(error){
           console.log(error);

@@ -1,12 +1,12 @@
-var app = angular.module('manage.irishtacos', [
+angular.module('manage.irishtacos', [
   'ui.router',
   'ui.grid',
   'ui.grid.selection'
-]);
+])
 
 
 //Debugging State Changes
-app.run(function($rootScope, $state, $stateParams, $log){
+.run(function($rootScope, $state, $stateParams, $log){
   //Add $state and $stateparams to the $rootScope when the app is run.
   $rootScope.$state = $state;
   $rootScope.$stateParams = $stateParams;

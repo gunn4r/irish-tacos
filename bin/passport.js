@@ -12,7 +12,7 @@ passport.use(new LocalStrategy({
     if(err) done(err);
     if(!user) return done('WTF?! That isnt even a user! IDIOT!', false);
     if(user.verifyPassword(password)) return done(null, user);
-    return done('Password was wrong sucka.', false);
+    return done('Password was wrong.', false);
   });
 }));
 

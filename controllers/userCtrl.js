@@ -4,6 +4,15 @@ var User = require('../models/userModel'),
 
 
 module.exports = {
+    getCurrentUser: function(req,res){
+      User.findById(req.session.passport.user, function(err, user){
+        if(err){
+          res.status(404).send('User not found');
+        } else {
+          res.status(200).send(user);
+        }
+      });
+    },
     create : function(req,res){
       var user = new User();
       req.body.meta = {};
@@ -28,8 +37,9 @@ module.exports = {
 
     update : function(req,res){
       User.findById(req.query.id, function(err, user){
-        user = _.extend(user, req.body);
-        user.save(includes.apiResultFunc(req, res));
+        var updatedUser = new User();
+        updatedUser = _.extend(user, req.body);
+        updatedUser.save(includes.apiResultFunc(req, res));
       });
     },
 

@@ -1,5 +1,6 @@
-<div class="input-message" ng-if="loginError">
-  {{loginError}}
+<div class="input-message">
+  <p>DEMO USER<br>username: test@test.com | password: test</p>
+  <p ng-if="loginError"><strong >{{loginError}}</strong></p>
 </div>
 <div class="login-form">
     <span class="input input--ruri" ng-class="{'input--filled': user.email, 'input--error': loginError}">

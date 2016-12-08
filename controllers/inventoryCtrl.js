@@ -24,8 +24,9 @@ module.exports = {
 
   update : function(req,res){
     InventoryItem.findById(req.query.id, function(err, inventory){
-      inventory = _.extend(inventory, req.body);
-      inventory.save(includes.apiResultFunc(req, res));
+      var updatedInventoryItem = new InventoryItem();
+      updatedInventoryItem = _.extend(inventory, req.body);
+      updatedInventoryItem.save(includes.apiResultFunc(req, res));
     });
   },
 

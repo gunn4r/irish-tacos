@@ -5,7 +5,6 @@ require('dotenv').config({path: './bin/.env'});
 var express = require('express'),
     bodyParser = require('body-parser'),
     cors = require('cors'),
-    passport = require('passport'),
     mongoose = require('mongoose'),
     session = require('express-session');
 
@@ -48,11 +47,19 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+
 //Users CRUD
 app.post('/api/user', userCtrl.create);
 app.get('/api/user', userCtrl.read);
 app.put('/api/user', userCtrl.update);
 app.delete('/api/user', userCtrl.delete);
+
+//Catch-all CRUD Endpoints
+// app.post('/api/crud', function(req, res){});
+// app.get('/api/crud', function(req, res){});
+// app.put('/api/crud', function(req, res){});
+// app.delete('/api/crud', function(req, res){});
 
 //Vendors Crud
 app.post('/api/vendor', vendorCtrl.create);
@@ -91,15 +98,24 @@ app.put('/api/student', studentCtrl.update);
 app.delete('/api/student', studentCtrl.delete);
 
 //Login and Logout
-app.post('/api/login', passport.authenticate('local', {
-  successRedirect: '/api/me'
-}));
+app.post('/api/login', 
+  passport.authenticate('local'),
+  function(req, res) {
+    res.status(200).send(req.body);
+  });
 
-app.get('/api/logout', function(req, res, next) {
+app.get('/api/logout', function(req, res) {
   req.logout();
-  return res.status(200).send('Sucessfully logged out.');
+  req.session.destroy();
+   res.redirect('/');
+
+  // req.session.destroy(function(err){
+  //     res.status(200).send('Sucessfully logged out.');
+  //     res.redirect('/');
+  // });
 });
 
+app.get('/api/currentUser', userCtrl.getCurrentUser);
 
 //Server and DB Init
 var port = (process.env.port || process.env.MIT_PORT);

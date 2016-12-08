@@ -22,9 +22,12 @@ angular.module('manage.irishtacos')
             .then(
               function(response){
                 if(response.status == 200) { console.log(response); return response.data; }
-                  else { errService.error(response); }
+                  else { consloe.log('Inside status 200 but with error'); errService.error(response); }
               },
-              function(error){ errService.error(error); }
+              function(error){ 
+                $state.go('login'); 
+                errService.error(error); 
+              }
             );
         }
       }
@@ -44,7 +47,6 @@ angular.module('manage.irishtacos')
     })
 
     .state('vendors', {
-      templateUrl: 'app/views/vendorsView.html',
       controller: 'vendorCtrl',
       parent: 'crud',
       url: 'vendors'
@@ -63,7 +65,6 @@ angular.module('manage.irishtacos')
     })
 
     .state('users', {
-      templateUrl: 'app/views/usersView.html',
       controller: 'userCtrl',
       parent: 'crud',
       url: 'users'
